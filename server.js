@@ -11,8 +11,8 @@ app.get('/', function(req, res){
 });
 
 app.post('/users', users.addUser);
-app.get('/users', users.getUsers);
 app.get('/users/:id', users.getUser);
+app.get('/users', users.getUsers);
 
 app.listen(3000);
 console.log('Listening on port 3000');
