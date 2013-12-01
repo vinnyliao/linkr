@@ -1,6 +1,6 @@
 var mongo = require('mongodb');
 
-var db = mongo.Db;
+db = mongo.Db;
 
 var mongoUri = process.env.MONGOLAB_URI;
 db.connect(mongoUri, function (err, db) {});
