@@ -4,7 +4,7 @@ var users = require('./routes/users');
 var app = express();
 
 app.get('/', function(req, res){
-  var body = 'Hello World';
+  var body = 'Linkr';
   res.setHeader('Content-Type', 'text/plain');
   res.setHeader('Content-Length', body.length);
   res.end(body);
