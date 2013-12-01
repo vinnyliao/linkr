@@ -1,4 +1,4 @@
-var db = require('mongodb').Db;
+var db = require('mongodb').Db,
 
 var mongoUri = process.env.MONGOLAB_URI;
 db.connect(mongoUri, function (err, db) {
