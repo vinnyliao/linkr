@@ -1,9 +1,17 @@
 var mongo = require('mongodb');
 
-db = mongo.Db;
+var Server = mongo.Server;
+var Db = mongo.Db;
+var BSON = mongo.BSONPure;
 
-var mongoUri = process.env.MONGOLAB_URI;
-db.connect(mongoUri, function (err, db) {});
+var server = new Server('ds053698.mongolab.com', 53698, {auto_reconnect: true});
+db = new Db('linkr', server);
+
+db.open(function(err, db) {
+  db.authenticate('linkr', 'linkr', function(err, result) {
+    console.log("Connected to 'linkr' database");
+  });
+});
 
 exports.addUser = function(req, res) {
   var user = req.body;
