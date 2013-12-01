@@ -1,9 +1,9 @@
-var db = require('mongodb').Db,
+var mongo = require('mongodb');
+
+var db = mongo.Db;
 
 var mongoUri = process.env.MONGOLAB_URI;
-db.connect(mongoUri, function (err, db) {
-  console.log('connected to database')
-});
+db.connect(mongoUri, function (err, db) {});
 
 exports.addUser = function(req, res) {
   var user = req.body;
